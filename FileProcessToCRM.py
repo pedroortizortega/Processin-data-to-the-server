@@ -157,13 +157,13 @@ def utilityLADWPconstrains(dfIn, dfUtility):
 #--------------------------------------------------------------------
 #--> Cities with CHARACTETISTIC
 def charCities(dfIn):
-    dfCities = pd.read_excel(r'PACE Eligibility 112118.xlsx').set_index('California Cities')[['A', 'B', 'C', 'D', 'E']]
-    for PACE in ['A', 'B', 'C', 'D', 'E']:
+    dfCities = pd.read_excel(r'data-characteristic.xlsx').set_index('California Cities')[['A', 'B', 'C', 'D', 'E']]
+    for x in ['A', 'B', 'C', 'D', 'E']:
         for index, columns in dfCities.iterrows():
-            if dfCities[PACE].str.contains(index).any():
-                dfCities.at[index, PACE] =  PACE
+            if dfCities[x].str.contains(index).any():
+                dfCities.at[index, x] =  x
             else:
-                dfCities.at[index, PACE] = np.nan
+                dfCities.at[index, x] = np.nan
     dfCities = dfCities[dfCities['A'].notna() | dfCities['B'].notna() | dfCities['C'].notna() | dfCities['D'].notna()  | dfCities['E'].notna()]
     dfCities= dfCities.reset_index().rename(columns={'California Cities':'CITY'})
     df = dfIn.merge(dfCities, on=["CITY"], how='inner')
