@@ -309,7 +309,7 @@ def processedFileToCRMViejitos(FileInit, FileUtilities, fileNameExit, fileOldest
     # Ads = "Direccion"
     df = splitAddress(df, Ads)
     print("splitAddress--> ",len(df))
-    #--> filtering the new one from the oldest churches
+    #--> filtering the new one from the oldest
     #--> making uppper case to the strings into the caloumns
     df = columnUPPER(df, uppercolumns)
     print("columnUpper--> ",len(df))
