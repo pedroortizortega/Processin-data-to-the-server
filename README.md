@@ -6,7 +6,7 @@ This is a file to process the data that is going to be in a database within the 
 
 ## Description
 ###  FileProcessToCRM file
-Within the file there are a some functions that make possible the procees fo the data. But, the principal function wich controls everything is called "processedFileToCRM". In this function you need to give some attributes to start the process as the name of the file, what characteristic you deside to process, etc. 
+Within the file there are some functions that make possible the procees fo the data. But, the principal function wich controls everything is called "processedFileToCRM". In this function you need to give some attributes to start the process as the name of the file, what characteristic you deside to process, etc. 
 
 In this proyect, I had to use a simple NLP algorimth with RE and NLTK to process the "Address" attribute in the dataframe. I split the "Address" between the "street", "city", "state" and "zipcode". Then I made a template that my partnerts asked me with this new columns. At the end, I write the file into a csv file
 
